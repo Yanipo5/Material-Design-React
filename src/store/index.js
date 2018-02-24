@@ -8,7 +8,7 @@ let store = createStore(reducers);
  *    initiate the store from localstorage
  ######################################  */
 
-if (localStorage.getItem("users").includes("[")) {
+if (localStorage.getItem("users") && localStorage.getItem("users").includes("[")) {
   const localStorageUsers = JSON.parse(localStorage.getItem("users"));
   if (0 < localStorageUsers.length) {
     localStorageUsers.forEach(user => {
