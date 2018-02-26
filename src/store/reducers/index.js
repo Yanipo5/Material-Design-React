@@ -4,7 +4,7 @@ import me from "./me";
 import details from "./details";
 
 export default combineReducers({
-  users : users,
-  me : me,
-  details: details
+  users,
+  me,
+  details,
 });

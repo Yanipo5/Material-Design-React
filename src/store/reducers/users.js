@@ -16,6 +16,18 @@ function users(state = [], action) {
       } else {
         return state;
       }
+    case "DEREGISTER":
+      const index = state.findIndex(user => {
+        return (
+          user.email === action.user.email &&
+          user.password === action.user.password
+        );
+      });
+      if (-1 < index) {
+        return [state.slice(0, index).concat(state.slice(index + 1))];
+      } else {
+        return state;
+      }
     default:
       return state;
   }

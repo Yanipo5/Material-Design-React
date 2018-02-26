@@ -5,6 +5,13 @@ export const register = user => {
   };
 };
 
+export const deregister = user => {
+  return {
+    type: "DEREGISTER",
+    user: user
+  };
+};
+
 export const login = user => {
   return {
     type: "LOGIN",
