@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import users from "./users";
 import me from "./me";
-import details from "./details";
+import profile from "./profile";
 
 export default combineReducers({
   users,
   me,
-  details,
+  profile,
 });

@@ -25,11 +25,11 @@ export const logout = user => {
   };
 };
 
-export const edit = (prop, val) => {
+export const editProfile = (prop, val) => {
   return {
-    type: "EDIT",
-    prop: prop,
-    val: val
+    type: "EDIT_PROFILE",
+    prop,
+    val
   };
 };
 
