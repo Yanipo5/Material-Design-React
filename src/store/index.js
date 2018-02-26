@@ -2,7 +2,7 @@ import { createStore } from "redux";
 import reducers from "./reducers";
 import { register, setUser } from "./actions/";
 
-let store = createStore(reducers);
+const store = createStore(reducers);
 
 /** ######################################
  *    initiate the store from localstorage

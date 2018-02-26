@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { edit } from "../store/actions/";
+import { editProfile } from "../store/actions/";
 
 class ProfileFormItem extends Component {
   style = {
@@ -9,7 +9,9 @@ class ProfileFormItem extends Component {
     display: "inline-block"
   };
   render() {
-    const value = this.props[this.props.stateName] || "";
+    const stateName = this.props.stateName;
+    const value = this.props[stateName];
+    
     return (
       <div>
         <label>
@@ -18,7 +20,7 @@ class ProfileFormItem extends Component {
             type={this.props.type || "text"}
             value={value}
             onChange={e => {
-              this.props.edit(this.props.stateName, e.target.value);
+              this.props.editProfile(stateName, e.target.value);
             }}
           />
         </label>
@@ -29,16 +31,15 @@ class ProfileFormItem extends Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    me: state.me,
-    email: state.me.email,
-    address: state.me.address,
-    work: state.me.work
+    work: state.profile.work,
+    address: state.profile.address,
+    email: state.profile.email
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    edit: bindActionCreators(edit, dispatch)
+    editProfile: bindActionCreators(editProfile, dispatch)
   };
 }
 
