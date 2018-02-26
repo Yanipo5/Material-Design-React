@@ -33,7 +33,6 @@ export default class MyProfile extends Component {
         <FlatButton
           label="Submit"
           primary={true}
-          disabled={true}
           onClick={this.handleClose}
         />,
       ];
